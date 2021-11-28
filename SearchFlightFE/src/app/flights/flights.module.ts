@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { FlightsComponent } from './flights/flights.component';
 import { FlightService } from '../core/services/flights/flight.service';
 import { FlightsRoutingModule } from './flights-routing.module';
+import { MaterialModule } from '../material/material.module';
 
 
 
@@ -13,7 +14,8 @@ import { FlightsRoutingModule } from './flights-routing.module';
   ],
   imports: [
     CommonModule,
-    FlightsRoutingModule   
+    FlightsRoutingModule,
+    MaterialModule   
   ],
   exports: [
     FlightsComponent
