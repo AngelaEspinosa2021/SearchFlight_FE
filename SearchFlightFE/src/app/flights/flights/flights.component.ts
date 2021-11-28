@@ -9,6 +9,8 @@ import { FlightService } from 'src/app/core/services/flights/flight.service';
 
 export class FlightsComponent implements OnInit {
 
+  dataSource: any= [];
+
   constructor(private flightService: FlightService) { }
 
   ngOnInit(): void {
