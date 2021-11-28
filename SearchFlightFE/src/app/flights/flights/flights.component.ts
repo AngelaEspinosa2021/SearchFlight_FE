@@ -10,6 +10,7 @@ import { FlightService } from 'src/app/core/services/flights/flight.service';
 export class FlightsComponent implements OnInit {
 
   dataSource: any= [];
+  displayedColumns: string[]= ['departureStation', 'arriveStation', 'departureDate', 'transport', 'price', 'currency'];
 
   constructor(private flightService: FlightService) { }
 
