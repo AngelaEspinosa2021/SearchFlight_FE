@@ -1,16 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { FlightsComponent } from './flights/flights.component';
+
 
 const routes: Routes = [
   {
-    path: '',
-    component: FlightsComponent
-  },
-  {
     path: 'flights',
-    component: FlightsComponent
-  }
+    loadChildren: () => import('./flights/flights.module').then(m=> m.FlightsModule)
+  },
+  
 ];
 
 @NgModule({
