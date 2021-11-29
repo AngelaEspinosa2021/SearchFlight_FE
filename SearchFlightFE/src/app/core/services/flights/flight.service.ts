@@ -15,6 +15,6 @@ export class FlightService {
   }
 
   searchFlights(departureStation: string, arrivalStation: string, departureDate: Date){
-    return this.http.get(this.baserUrl+departureStation+arrivalStation+departureDate);
+    return this.http.get(this.baserUrl+departureStation+"/"+arrivalStation+"/"+departureDate);
   }
 }
