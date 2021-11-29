@@ -12,6 +12,8 @@ import { FlightService } from 'src/app/core/services/flights/flight.service';
 export class SearchFlightsComponent{
 
  bookedFlights = null;
+ dataSource = [];
+ displayedColumns: string[]= ['departureStation', 'arrivalStation', 'departureDate','actions'];
 
  constructor(private flightService: FlightService,
               private route: ActivatedRoute) { }
