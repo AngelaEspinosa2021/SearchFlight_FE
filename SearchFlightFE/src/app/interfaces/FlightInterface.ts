@@ -1,9 +1,9 @@
 export interface FlightInterface {
     id: number;
     departureStation: string;
-    arriveStation: string;
+    arrivalStation: string;
     departureDate: Date;
-    TransportRefId: number;
+    transportRefId: number;
     price: number;
     currency: string;
 }

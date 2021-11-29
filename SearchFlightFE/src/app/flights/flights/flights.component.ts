@@ -12,7 +12,7 @@ import { FlightInterface } from '../../interfaces/FlightInterface';
 export class FlightsComponent implements OnInit {
 
   dataSource: any= [];
-  displayedColumns: string[]= ['departureStation', 'arriveStation', 'departureDate', 'transport', 'price', 'currency'];
+  displayedColumns: string[]= ['departureStation', 'arrivalStation', 'departureDate', 'transport', 'price', 'currency'];
 
   constructor(private flightService: FlightService) { }
 
