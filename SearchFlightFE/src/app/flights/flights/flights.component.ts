@@ -1,5 +1,7 @@
 import { Component, NgModule, OnInit } from '@angular/core';
+import { MatTableDataSource } from '@angular/material/table';
 import { FlightService } from 'src/app/core/services/flights/flight.service';
+import { FlightInterface } from '../../interfaces/FlightInterface';
 
 @Component({
   selector: 'app-flights',
@@ -16,6 +18,7 @@ export class FlightsComponent implements OnInit {
 
   ngOnInit(): void {
     this.flightService.getFlights().subscribe((data:any) => {
+      this.dataSource = new MatTableDataSource<FlightInterface>(data.result as FlightInterface[]);
       console.log(data);
     });
   }
