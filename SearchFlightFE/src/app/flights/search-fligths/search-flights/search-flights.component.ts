@@ -16,4 +16,8 @@ export class SearchFlightsComponent{
    departureDate: new FormControl ('', Validators.required)   
  })
 
+ onSubmit(){
+   console.log(this.fligthForm.value);
+ }
+
 }
