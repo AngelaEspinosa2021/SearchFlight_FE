@@ -11,6 +11,8 @@ import { FlightService } from 'src/app/core/services/flights/flight.service';
 })
 export class SearchFlightsComponent{
 
+ bookedFlights = null;
+
  constructor(private flightService: FlightService,
               private route: ActivatedRoute) { }
 
@@ -24,7 +26,8 @@ export class SearchFlightsComponent{
    console.log(this.flightForm.value);
    const form = this.flightForm.value;
    this.flightService.searchFlights(form.departureStation, form.arrivalStation, form.departureDate).subscribe((data:any) => {
-     console.log(data);
+      console.log(data);
+      {this.bookedFlights = data}
    })
  }
 
