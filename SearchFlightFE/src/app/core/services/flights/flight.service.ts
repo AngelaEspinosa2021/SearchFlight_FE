@@ -6,11 +6,15 @@ import { HttpClient } from '@angular/common/http';
 })
 export class FlightService {
 
-  baserUrl: string = 'https://localhost:44365/api/Flights';
+  baserUrl: string = 'https://localhost:44365/api/Flights/';
 
   constructor(private http: HttpClient) { }
 
   getFlights(){
     return this.http.get(this.baserUrl);
+  }
+
+  searchFlights(departureStation: string, arrivalStation: string, departureDate: Date){
+    return this.http.get(this.baserUrl+departureStation+arrivalStation+departureDate);
   }
 }
