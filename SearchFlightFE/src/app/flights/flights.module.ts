@@ -5,12 +5,14 @@ import { FlightsComponent } from './flights/flights.component';
 import { FlightService } from '../core/services/flights/flight.service';
 import { FlightsRoutingModule } from './flights-routing.module';
 import { MaterialModule } from '../material/material.module';
+import { SearchFlightsComponent } from './search-fligths/search-flights/search-flights.component';
 
 
 
 @NgModule({
   declarations: [
-    FlightsComponent
+    FlightsComponent,
+    SearchFlightsComponent
   ],
   imports: [
     CommonModule,
