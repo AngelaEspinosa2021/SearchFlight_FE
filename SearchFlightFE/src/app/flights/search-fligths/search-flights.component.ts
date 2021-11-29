@@ -10,14 +10,14 @@ export class SearchFlightsComponent{
 
   constructor() { }
 
- fligthForm = new FormGroup({
+ flightForm = new FormGroup({
    departureStation: new FormControl('', Validators.required),
    arrivalStation: new FormControl('', Validators.required),
    departureDate: new FormControl ('', Validators.required)   
  })
 
  onSubmit(){
-   console.log(this.fligthForm.value);
+   console.log(this.flightForm.value);
  }
 
 }

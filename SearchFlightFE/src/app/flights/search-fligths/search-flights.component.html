@@ -1,0 +1,19 @@
+<mat-card>
+    <span>Busqueda de Vuelos Disponibles</span>
+    <form [formGroup]="flightForm" (ngSubmit)="onSubmit()" class="search-flight-form">
+        <mat-form-field class="search-flight-field">
+            <input matInput placeholder="Ciudad Origen" formControlName="departureStation">
+        </mat-form-field>
+        <mat-form-field class="search-flight-field">
+            <input matInput placeholder="Ciudad Destino" formControlName="arrivalStation">
+        </mat-form-field> 
+        <mat-form-field class="search-flight-field">
+        <input matInput placeholder="Fecha de Salida" formControlName="departureDate">
+        </mat-form-field>  
+    <br/>
+    <div>
+        <button class="search-form-btn" mat-raised-button color="primary" [disabled]="!flightForm.valid">Buscar</button>
+    </div>   
+    
+    </form>
+</mat-card>

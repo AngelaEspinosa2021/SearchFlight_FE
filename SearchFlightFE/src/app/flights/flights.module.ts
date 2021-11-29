@@ -5,7 +5,8 @@ import { FlightsComponent } from './flights/flights.component';
 import { FlightService } from '../core/services/flights/flight.service';
 import { FlightsRoutingModule } from './flights-routing.module';
 import { MaterialModule } from '../material/material.module';
-import { SearchFlightsComponent } from './search-fligths/search-flights/search-flights.component';
+import { SearchFlightsComponent } from './search-fligths/search-flights.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -17,10 +18,12 @@ import { SearchFlightsComponent } from './search-fligths/search-flights/search-f
   imports: [
     CommonModule,
     FlightsRoutingModule,
-    MaterialModule   
+    MaterialModule,
+    ReactiveFormsModule   
   ],
   exports: [
-    FlightsComponent
+    FlightsComponent,
+    SearchFlightsComponent
   ]
 })
 export class FlightsModule { }
