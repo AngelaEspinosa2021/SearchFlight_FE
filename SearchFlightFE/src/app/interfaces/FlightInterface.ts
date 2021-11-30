@@ -3,7 +3,7 @@ export interface FlightInterface {
     departureStation: string;
     arrivalStation: string;
     departureDate: Date;
-    transportRefId: number;
-    price: number;
-    currency: string;
+    //transportRefId: number;
+    //price: number;
+    //currency: string;
 }

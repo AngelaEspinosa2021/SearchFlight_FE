@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatTableDataSource } from '@angular/material/table';
 import { ActivatedRoute } from '@angular/router';
 import { FlightService } from 'src/app/core/services/flights/flight.service';
+import { FlightInterface } from 'src/app/interfaces/FlightInterface';
+
 
 
 @Component({
@@ -9,11 +12,12 @@ import { FlightService } from 'src/app/core/services/flights/flight.service';
   templateUrl: './search-flights.component.html',
   styleUrls: ['./search-flights.component.css']
 })
+
 export class SearchFlightsComponent{
 
+  dataSource!: MatTableDataSource<any[]>;
  bookedFlights = null;
- dataSource = [];
- displayedColumns: string[]= ['departureStation', 'arrivalStation', 'departureDate','actions'];
+ displayedColumns: string[]= ['departureStation', 'arrivalStation', 'departureDate', 'actions'];
 
  constructor(private flightService: FlightService,
               private route: ActivatedRoute) { }
@@ -25,12 +29,18 @@ export class SearchFlightsComponent{
  })
 
  onSubmit(){
-   console.log(this.flightForm.value);
    const form = this.flightForm.value;
-   this.flightService.searchFlights(form.departureStation, form.arrivalStation, form.departureDate).subscribe((data:any) => {
-      console.log(data);
-      {this.bookedFlights = data}
+   this.flightService.searchFlights(form.departureStation, form.arrivalStation, form.departureDate).subscribe((data: any) => {
+      {
+        this.bookedFlights = data
+        this.dataSource = new MatTableDataSource(data);
+        console.log(data);
+      }        
    })
  }
+ BookFlight(){
+
+ }
+
 
 }

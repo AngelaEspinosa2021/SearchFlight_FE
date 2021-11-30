@@ -1,7 +1,8 @@
 import { Component, NgModule, OnInit } from '@angular/core';
-import { MatTableDataSource } from '@angular/material/table';
 import { FlightService } from 'src/app/core/services/flights/flight.service';
 import { FlightInterface } from '../../interfaces/FlightInterface';
+import { MatTableDataSource} from '@angular/material/table';
+
 
 @Component({
   selector: 'app-flights',
